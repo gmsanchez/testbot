@@ -32,7 +32,7 @@ def upload(filename):
 
   for a in assets.json():
     if a["name"]==filename:
-     print "Overwriting"
+     print("Overwriting")
      r = s.delete(a["url"])
      assert r.ok, str(r)
      time.sleep(1)
@@ -61,7 +61,7 @@ def download(filename):
       with open(filename, 'wb') as f:
           for chunk in rs.iter_content(chunk_size=1024*1024):
               if i % 10 == 0:
-                print i, ' MB'
+                print(i, ' MB')
               i+= 1
               f.write(chunk)
   
